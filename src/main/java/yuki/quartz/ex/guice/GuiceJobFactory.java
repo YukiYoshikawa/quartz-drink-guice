@@ -15,17 +15,17 @@ import com.google.inject.Injector;
 @Singleton
 public final class GuiceJobFactory implements JobFactory {
 
-	private final Injector injector;
+    private final Injector injector;
 
-	@Inject
+    @Inject
     public GuiceJobFactory(Injector injector) {
-		this.injector = injector;
-	}
+        this.injector = injector;
+    }
 
-	@Override
-	public Job newJob(TriggerFiredBundle bundle, Scheduler scheduler) throws SchedulerException {
-		JobDetail jobDetail = bundle.getJobDetail();
-		Class<? extends Job> jobClass = jobDetail.getJobClass();
-		return injector.getInstance(jobClass);
-	}
+    @Override
+    public Job newJob(TriggerFiredBundle bundle, Scheduler scheduler) throws SchedulerException {
+        JobDetail jobDetail = bundle.getJobDetail();
+        Class<? extends Job> jobClass = jobDetail.getJobClass();
+        return injector.getInstance(jobClass);
+    }
 }
