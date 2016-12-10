@@ -7,10 +7,10 @@ import org.quartz.Scheduler;
  */
 public interface QuartzEx {
 
-	/**
-	 * return Scheduler
+    /**
+     * return Scheduler
 	 *
-	 * @return Scheduler
-	 */
-	Scheduler getScheduler();
+     * @return Scheduler
+     */
+    Scheduler getScheduler();
 }
