@@ -4,9 +4,28 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>yuki.quartz.ex</groupId>
+    <groupId>y-yuki.net</groupId>
     <artifactId>quartz-drink-guice</artifactId>
     <version>0.1.0</version>
+
+    <name>Quartz-Drink-Guice</name>
+    <description>Quartz + Guice(Dependency Injection)</description>
+    <url>https://github.com/YukiYoshikawa/quartz-drink-guice</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Yuki Yoshikawa</name>
+            <email>yuki.ver1.5@gmail.com</email>
+        </developer>
+    </developers>
 
     <build>
         <plugins>
