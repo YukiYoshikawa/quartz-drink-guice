@@ -1,4 +1,4 @@
-package yyuki.net.quartz.ex.guice;
+package net.yyuki.quartz.ex.guice;
 
 import org.quartz.Scheduler;
 

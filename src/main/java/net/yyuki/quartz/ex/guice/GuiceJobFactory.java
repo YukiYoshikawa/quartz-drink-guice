@@ -1,4 +1,4 @@
-package yyuki.net.quartz.ex.guice;
+package net.yyuki.quartz.ex.guice;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -25,7 +25,6 @@ public final class GuiceJobFactory implements JobFactory {
     @Override
     public Job newJob(TriggerFiredBundle bundle, Scheduler scheduler) throws SchedulerException {
         JobDetail jobDetail = bundle.getJobDetail();
-        Class<? extends Job> jobClass = jobDetail.getJobClass();
-        return injector.getInstance(jobClass);
+        return injector.getInstance(jobDetail.getJobClass());
     }
 }
