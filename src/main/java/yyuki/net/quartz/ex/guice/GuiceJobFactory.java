@@ -1,4 +1,4 @@
-package yuki.quartz.ex.guice;
+package yyuki.net.quartz.ex.guice;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

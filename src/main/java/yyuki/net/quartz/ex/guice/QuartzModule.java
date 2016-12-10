@@ -1,4 +1,4 @@
-package yuki.quartz.ex.guice;
+package yyuki.net.quartz.ex.guice;
 
 import com.google.inject.AbstractModule;
 import org.quartz.SchedulerFactory;
