@@ -16,6 +16,7 @@ hs_err_pid*
 *.iws
 *.iml
 *.ipr
+/.idea/
 
 ### NetBeans ###
 nbproject/private/
@@ -29,3 +30,4 @@ nbdist/
 .classpath
 .project
 .settings
+

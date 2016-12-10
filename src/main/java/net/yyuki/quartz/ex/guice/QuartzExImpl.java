@@ -11,12 +11,12 @@ import javax.inject.Singleton;
  * Scheduler Holder
  */
 @Singleton
-final class QuartzImpl implements QuartzEx {
+final class QuartzExImpl implements QuartzEx {
 
 	private final Scheduler scheduler;
 
 	@Inject
-    QuartzImpl(SchedulerFactory factory, GuiceJobFactory jobFactory) throws SchedulerException {
+    QuartzExImpl(SchedulerFactory factory, GuiceJobFactory jobFactory) throws SchedulerException {
         this.scheduler = factory.getScheduler();
     	this.scheduler.setJobFactory(jobFactory);
         this.scheduler.start();
@@ -27,6 +27,7 @@ final class QuartzImpl implements QuartzEx {
 	 *
 	 * @return Scheduler
 	 */
+	@Override
 	public final Scheduler getScheduler() {
 	    return this.scheduler;
 	}
