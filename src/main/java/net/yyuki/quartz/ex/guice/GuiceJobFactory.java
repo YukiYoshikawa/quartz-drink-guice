@@ -13,12 +13,12 @@ import org.quartz.spi.TriggerFiredBundle;
 import com.google.inject.Injector;
 
 @Singleton
-public final class GuiceJobFactory implements JobFactory {
+final class GuiceJobFactory implements JobFactory {
 
     private final Injector injector;
 
     @Inject
-    public GuiceJobFactory(Injector injector) {
+    GuiceJobFactory(Injector injector) {
         this.injector = injector;
     }
 

@@ -13,22 +13,22 @@ import javax.inject.Singleton;
 @Singleton
 final class QuartzExImpl implements QuartzEx {
 
-	private final Scheduler scheduler;
+    private final Scheduler scheduler;
 
-	@Inject
-    QuartzExImpl(SchedulerFactory factory, GuiceJobFactory jobFactory) throws SchedulerException {
-        this.scheduler = factory.getScheduler();
-    	this.scheduler.setJobFactory(jobFactory);
+    @Inject
+    QuartzExImpl(SchedulerFactory schedulerFactory, GuiceJobFactory jobFactory) throws SchedulerException {
+        this.scheduler = schedulerFactory.getScheduler();
+        this.scheduler.setJobFactory(jobFactory);
         this.scheduler.start();
-	}
+    }
 
-	/**
-	 * return Scheduler
-	 *
-	 * @return Scheduler
-	 */
-	@Override
-	public final Scheduler getScheduler() {
-	    return this.scheduler;
-	}
+    /**
+     * return Scheduler
+     *
+     * @return Scheduler
+     */
+    @Override
+    public final Scheduler getScheduler() {
+        return this.scheduler;
+    }
 }
