@@ -19,26 +19,27 @@ Add dependency in your pom.xml or other build tool's configuration file.
 Define a job class
 
 ```java
-import lombok.extern.slf4j.Slf4j;
+import org.quartz.DisallowConcurrentExecution;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 
-@Slf4j
-public class MyJob1a implements org.quartz.Job {
 
-    public MyJob1a() {
+@DisallowConcurrentExecution
+@Singleton
+public class MyJob implements org.quartz.Job {
+    
+    private final MyLogic logic;
+
+    @Inject
+    public MyJob(MyLogic logic) {
+        this.logic = logic;
     }
 
+    @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
-        log.info(">> MyJob1a is execute start.");
-        
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        log.info(">> MyJob1a is execute end.");
+        logic.invoke();
     }
 }
 ```
@@ -79,7 +80,7 @@ public class TrialQuartzImpl implements TrialQuartz {
 
     @Override
     public void run() {
-        JobDetail job1 = JobBuilder.newJob(MyJob1a.class)
+        JobDetail job1 = JobBuilder.newJob(MyJob.class)
                 .withIdentity("job1", "group1")
                 .build();
 
